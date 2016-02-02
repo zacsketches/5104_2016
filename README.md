@@ -13,4 +13,4 @@ An Arduino sketch used to test the digital output of our proximity sensor we wil
 A C++ program to demonstrate how thread concurrency works so that we can consider multi-threading when the separate components of our robot work together.
 
 ####State Machine
-We intend to control our robotic assemblies with a state machine.  This is a basic example to show how a class owns its own `vector<allowed_states` and users interact through the public interface to shift states.
+We intend to control our robotic assemblies with a state machine.  This is a basic example to show how a class owns its own `vector<allowed_states>` and users interact through the public interface to shift states.
