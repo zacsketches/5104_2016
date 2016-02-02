@@ -9,5 +9,5 @@ This repo contains code used to mentor the Breakerbots as we work our way throug
 ####Proximity Detect
 An Arduino sketch used to test the digital output of our proximity sensor we will use to detect the presence of the ball in the robot.
 
-####Class Data
+####Concurrency
 A C++ program to demonstrate how thread concurrency works so that we can consider multi-threading when the separate components of our robot work together.
