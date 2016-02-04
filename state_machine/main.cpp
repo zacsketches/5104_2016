@@ -12,6 +12,7 @@
 
 #include <iostream>
 #include <vector>
+#include <sstream>
 
 using namespace std;
 
@@ -94,11 +95,12 @@ public:
 
 	//set the Car's state
 	bool set_state(int index){
-		bool res = false;
+		bool state_is_good = false;
 		if(index_is_valid(index)) {
 			state_index = index;
+			state_is_good = true;
 		}
-		return res;
+		return state_is_good;
 	}
 };
 
@@ -106,7 +108,7 @@ int main(int argc, char **argv) {
 	Car my_car;
 
 	my_car.add_state(23, 34.56, 23000);
-	Car_state cs1(17, 789.45, 43000);
+	Car_state cs1 {17, 789.45, 43000};
 	my_car.add_state(cs1);
 	my_car.add_state(38, 90.3, 56000);
 
@@ -116,14 +118,23 @@ int main(int argc, char **argv) {
 
 	my_car.show_state();
 
-	cout<<"The car has "<<my_car.get_states()<<" gears."<<endl;
-	cout<<"Select a gear between 0 and "<<my_car.get_states()-1<<": ";
-	int gear;
-	cin>>gear;
-
-	my_car.set_state(gear);
-
-	my_car.show_state();
+	int loop_counter = 0;
+	while(loop_counter<3){
+		cout<<"\nThe car has "<<my_car.get_states()<<" gears."<<endl;
+		cout<<"Select a gear between 0 and "<<my_car.get_states()-1<<": ";
+		int gear;
+		string line;
+		getline(cin, line);
+		stringstream ss(line);
+		if(ss>>gear){
+			if(	! my_car.set_state(gear) )
+				cout<<"You requested an invalid gear!\n";
+			my_car.show_state();	
+		} else
+			cout<<"That was invalid input."<<endl;
+		
+		++loop_counter;	
+	}
 }
 
 

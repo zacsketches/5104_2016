@@ -1,7 +1,9 @@
 ##Breakerbots
-####FRC Team 5104
-####Pacific Grove High School
-####Pacific Grove, California
+**FRC Team 5104**  
+**Pacific Grove High School**  
+**Pacific Grove, California**  
+
+-----------------
 
 ##2016 Build Season
 This repo contains code used to mentor the Breakerbots as we work our way through the build season this year.
